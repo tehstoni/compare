@@ -4,7 +4,6 @@ def compare_files(file1, file2):
         file1_lines = f1.readlines()
         file2_lines = f2.readlines()
 
-    # Create a dictionary to store the lmhash:password pairs from the second file
     lmhash_password = {}
     for line in file2_lines:
         parts = line.strip().split(':')
@@ -12,7 +11,6 @@ def compare_files(file1, file2):
             lmhash, password = parts
             lmhash_password[lmhash] = password
 
-    # Compare the lmhash entries in the first file with the lmhash:password dictionary
     for line in file1_lines:
         parts = line.strip().split(':')
         if len(parts) >= 4:
@@ -28,9 +26,7 @@ def compare_files(file1, file2):
                 print(f"{full_name}:{lmhash}:{password}")
         else:
             print(f"Invalid entry: {line.strip()}")
-
-
-# Usage: python script.py file1.txt file2.txt
+            
 if __name__ == "__main__":
     import sys
 
