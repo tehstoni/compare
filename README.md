@@ -6,10 +6,10 @@ usage:
 
 general 
 ```bash
-python3 compare.py hashcat.potfile ntds.txt
+python3 compare.py ntds.txt hashcat.potfile
 ```
 
 output to file
 ```bash
-python3 compare.py hashcat.potfile ntds.txt > matched.txt
+python3 compare.py ntds.txt hashcat.potfile > matched.txt
 ```
